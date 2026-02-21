@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Free Online Games - Play-Games.games | No Downloads Required</title>
+    <meta name="description" content="Play thousands of free online games directly in your browser. No downloads, no login, no installation. Enjoy 2048, Tetris, Bubble Shooter, puzzle games, action games and more instantly on Play-Games.games.">
+    <meta name="keywords" content="free online games, play games online, html5 games, browser games, instant games, no download games, 2048, tetris, bubble shooter, puzzle games, action games">
+    <meta name="author" content="Play-Games.games">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    
+    <link rel="canonical" href="https://play-games.games/">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://play-games.games/">
+    <meta property="og:title" content="Play Free Online Games - Play-Games.games">
+    <meta property="og:description" content="Play thousands of free online games directly in your browser. No downloads, no login required.">
+    <meta property="og:image" content="https://play-games.games/og-image.jpg">
+    <meta property="og:site_name" content="Play-Games.games">
+    <meta property="og:locale" content="en_US">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://play-games.games/">
+    <meta name="twitter:title" content="Play Free Online Games - Play-Games.games">
+    <meta name="twitter:description" content="Play thousands of free online games directly in your browser. No downloads, no login required.">
+    <meta name="twitter:image" content="https://play-games.games/twitter-image.jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #00f5a0, #00d9f5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: relative;
+            display: inline-block;
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-weight: 300;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 18px 28px;
+            border-radius: 50px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+            border-color: #00f5a0;
+        }
+
+        .game-category {
+            margin: 60px 0 30px;
+        }
+
+        .category-title {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: white;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .category-title::before {
+            content: attr(data-icon);
+            font-size: 2.5rem;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .game-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .game-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00f5a0, #00d9f5, #667eea);
+            z-index: 1;
+        }
+
+        .game-card:hover {
+            transform: translateY(-12px) rotateZ(1deg);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+        }
+
+        .game-title {
+            padding: 20px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            letter-spacing: 0.5px;
+        }
+
+        .game-iframe-container {
+            position: relative;
+            width: 100%;
+            height: 260px;
+        }
+
+        .game-loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .game-loading::after {
+            content: "";
+            width: 40px;
+            height: 40px;
+            border: 4px solid #667eea;
+            border-top-color: transparent;
+            border-radius: 50%;
+            margin-top: 15px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .game-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            box-shadow: 0 -8px 32px rgba(0,0,0,0.3);
+        }
+
+        .footer-text {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .game-iframe-container {
+                height: 320px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .game-iframe-container {
+                height: 380px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">🎮 Play-Games.games</div>
+        <div class="tagline">Play Free Online Games - No Downloads, No Login</div>
+    </header>
+
+    <div class="container">
+
+        <div class="features">
+            <div class="feature-item">🎯 100% Free to Play</div>
+            <div class="feature-item">⚡ No Downloads Required</div>
+            <div class="feature-item">🔓 No Sign-Up Needed</div>
+            <div class="feature-item">📱 Mobile & Desktop Friendly</div>
+            <div class="feature-item">✨ Daily New Games</div>
+        </div>
+
+        <section class="game-category">
+            <h2 class="category-title" data-icon="🔥">Popular Games</h2>
+            <div class="game-grid">
+                <div class="game-card">
+                    <div class="game-title">2048 Classic</div>
+                    <div class="game-iframe-container">
+                        <div class="game-loading">Loading game...</div>
+                        <iframe class="game-iframe" src="https://html5.gamedistribution.com/40ac5aea85eb4fc1b74f5aa57f94e38b" allowfullscreen onload="this.previousElementSibling.style.display='none'"></iframe>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-title">Bubble Shooter</div>
+                    <div class="game-iframe-container">
+                        <div class="game-loading">Loading game...</div>
+                        <iframe class="game-iframe" src="https://html5.gamedistribution.com/e8e7f97933894e0c92422ec237d66d14" allowfullscreen onload="this.previousElementSibling.style.display='none'"></iframe>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-title">Tetris Classic</div>
+                    <div class="game-iframe-container">
+                        <div class="game-loading">Loading game...</div>
+                        <iframe class="game-iframe" src="https://html5.gamedistribution.com/d2aea68de5124e86bb0920bbfe7122f3" allowfullscreen onload="this.previousElementSibling.style.display='none'"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="game-category">
+            <h2 class="category-title" data-icon="⚡">Action Games</h2>
+            <div class="game-grid">
+                <div class="game-card">
+                    <div class="game-title">Mini Runner</div>
+                    <div class="game-iframe-container">
+                        <div class="game-loading">Loading game...</div>
+                        <iframe class="game-iframe" src="https://html5.gamedistribution.com/e72a5554d24c48eda302d76170354071" allowfullscreen onload="this.previousElementSibling.style.display='none'"></iframe>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-title">Pixel Shooter</div>
+                    <div class="game-iframe-container">
+                        <div class="game-loading">Loading game...</div>
+                        <iframe class="game-iframe" src="https://html5.gamedistribution.com/3dff4457ec07485fa5f00920fcff4a9b" allowfullscreen onload="this.previousElementSibling.style.display='none'"></iframe>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-title">Street Fighter</div>
+                    <div class="game-iframe-container">
+                        <div class="game-loading">Loading game...</div>
+                        <iframe class="game-iframe" src="https://html5.gamedistribution.com/8c3726b3598d4161b4b203bb166394ef" allowfullscreen onload="this.previousElementSibling.style.display='none'"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="game-category">
+            <h2 class="category-title" data-icon="🧩">Puzzle Games</h2>
+            <div class="game-grid">
+
+                <div class="game-card">
+                    <div class="game-title">Candy Crush Saga</div>
+                    <div class="game-iframe-container">
+                        <div class="game-loading">Loading game...</div>
+                        <iframe class="game-iframe" src="https://html5.gamedistribution.com/657401ced196415a9596937d98367ee4" allowfullscreen onload="this.previousElementSibling.style.display='none'"></iframe>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-title">Jigsaw Puzzle</div>
+                    <div class="game-iframe-container">
+                        <div class="game-loading">Loading game...</div>
+                        <iframe class="game-iframe" src="https://html5.gamedistribution.com/42f5823dc0a144aaa8955a982cb44f75" allowfullscreen onload="this.previousElementSibling.style.display='none'"></iframe>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-title">Maze Run</div>
+                    <div class="game-iframe-container">
+                        <div class="game-loading">Loading game...</div>
+                        <iframe class="game-iframe" src="https://html5.gamedistribution.com/682e4bb7a40a47fd8608f38e3faccc21" allowfullscreen onload="this.previousElementSibling.style.display='none'"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-text">© 2026 Play-Games.games | All games are embedded from official sources | Play online for free</div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Play-Games.games",
+        "url": "https://play-games.games",
+        "description": "Play thousands of free online games directly in your browser. No downloads, no login required.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://play-games.games/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        },
+        "inLanguage": "en"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Popular Games",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "2048 Classic",
+                "url": "https://play-games.games"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Bubble Shooter",
+                "url": "https://play-games.games"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Tetris Classic",
+                "url": "https://play-games.games"
+            }
+        ]
+    }
+    </script>
+</body>
+</html>
