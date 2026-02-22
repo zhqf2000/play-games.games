@@ -199,6 +199,14 @@
     <footer>
         <div class="footer-text">© 2026 Play-Games.games | All games are embedded from official sources | Play online for free | <a href="privacy.html">Privacy Policy</a> | <a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a></div>
     </footer>
-    <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "be2b89ecad9847d9b737f8fca3dcfd07"}'></script><!-- End Cloudflare Web Analytics -->
+    <script>
+        if (window.location.hostname === 'web-tools.pro') {
+            var cfScript = document.createElement('script');
+            cfScript.defer = true;
+            cfScript.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+            cfScript.setAttribute('data-cf-beacon', '{"token": "be2b89ecad9847d9b737f8fca3dcfd07"}');
+            document.body.appendChild(cfScript);
+        }
+    </script>
 </body>
 </html>
