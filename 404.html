@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Play-Games.games</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #00f5a0, #00d9f5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            flex: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .error-card {
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+            padding: 60px 50px;
+            text-align: center;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .error-emoji {
+            font-size: 5rem;
+            margin-bottom: 20px;
+        }
+
+        .error-title {
+            font-size: 2rem;
+            color: #1a1a2e;
+            margin-bottom: 15px;
+        }
+
+        .error-text {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .back-link {
+            display: inline-block;
+            padding: 15px 45px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .back-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+        }
+
+        .footer-text {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .footer-text a {
+            color: #00f5a0;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .error-card {
+                padding: 40px 25px;
+            }
+
+            .error-code {
+                font-size: 5rem;
+            }
+
+            .error-emoji {
+                font-size: 3.5rem;
+            }
+
+            .error-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="index.html">🎮 Play-Games.games</a></div>
+    </header>
+
+    <div class="container">
+        <div class="error-card">
+            <div class="error-code">404</div>
+            <div class="error-emoji">🎯</div>
+            <h1 class="error-title">Page Not Found</h1>
+            <p class="error-text">Oops! The page you're looking for seems to have wandered off into the game world.</p>
+            <a href="index.html" class="back-link">← Back to Games</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-text">© 2026 Play-Games.games | All games are embedded from official sources | Play online for free | <a href="privacy.html">Privacy Policy</a> | <a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a></div>
+    </footer>
+
+    <script>
+        if (window.location.hostname === 'play-games.games') {
+            var cfScript = document.createElement('script');
+            cfScript.defer = true;
+            cfScript.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+            cfScript.setAttribute('data-cf-beacon', '{"token": "be2b89ecad9847d9b737f8fca3dcfd07"}');
+            document.body.appendChild(cfScript);
+        }
+    </script>
+</body>
+</html>
